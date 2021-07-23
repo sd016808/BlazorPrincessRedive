@@ -1,0 +1,15 @@
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\bin\Debug\WindowsFormsApp10.exe.config
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\bin\Debug\WindowsFormsApp10.exe
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\bin\Debug\WindowsFormsApp10.pdb
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\bin\Debug\MoreLinq.dll
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\bin\Debug\System.ValueTuple.dll
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\bin\Debug\MoreLinq.xml
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\bin\Debug\System.ValueTuple.xml
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.csprojAssemblyReference.cache
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.Form1.resources
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.Properties.Resources.resources
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.csproj.GenerateResource.cache
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.csproj.CoreCompileInputs.cache
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.csproj.CopyComplete
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.exe
+c:\users\harris.dai\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.pdb
