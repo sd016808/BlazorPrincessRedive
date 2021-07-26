@@ -1,0 +1,41 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <div class="d-flex flex-row">
+        <img src="index.jpg" width="30" height="30">
+        <a class="navbar-brand" href="">公會戰查詢</a>
+    </div>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> 查詢本期
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="record">
+                <span class="oi oi-plus" aria-hidden="true"></span> 查詢紀錄
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="about">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 關於我
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass { get; set; } = "collapse";
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+        NavMenuCssClass = collapseNavMenu ? "collapse" : null;
+    }
+}

@@ -1,0 +1,164 @@
+﻿@page "/"
+
+@inject HttpClient Http
+
+<h1>公會戰查詢</h1>
+
+<p>查詢伺服器/時間</p>
+<hr />
+<div class="d-flex flex-row">
+    <DropdownList Class="mr-3" TItem="MySelectModel" TValue="int"
+                  Data="@serverList"
+                  TextField="@((item)=>item.MyTextField)"
+                  ValueField="@((item)=>item.MyValueField)"
+                  @bind-SelectedValue="@selectedServer"
+                  Color="Color.Primary">
+        @(serverList?.FirstOrDefault(x=>x.MyValueField == selectedServer)?.MyTextField ?? "請選擇伺服器")
+    </DropdownList>
+    <DropdownList Class="mr-3" TItem="MySelectModel" TValue="int"
+                  Data="@dateList"
+                  TextField="@((item)=>item.MyTextField)"
+                  ValueField="@((item)=>item.MyValueField)"
+                  @bind-SelectedValue="@selectedDate"
+                  Color="Color.Primary">
+        @(dateList?.FirstOrDefault(x=>x.MyValueField == selectedDate)?.MyTextField ?? "請選擇日期")
+    </DropdownList>
+    <DropdownList Class="mr-3" TItem="MySelectModel" TValue="int"
+                  Data="@timeList"
+                  TextField="@((item)=>item.MyTextField)"
+                  ValueField="@((item)=>item.MyValueField)"
+                  @bind-SelectedValue="@selectedTime"
+                  Color="Color.Primary">
+        @(timeList?.FirstOrDefault(x=>x.MyValueField == selectedTime)?.MyTextField ?? "請選擇時間")
+    </DropdownList>
+    <Button Color="Color.Primary" Clicked="@OnSelectLatestBtnClicked">選取最新資料</Button>
+
+</div>
+<br />
+<br />
+<div class="d-flex flex-row">
+    <TextEdit Class="mr-3" Placeholder="查詢內容"></TextEdit>
+    <DropdownList Class="mr-3" TItem="MySelectModel" TValue="int"
+                    Data="@searchFilterList"
+                    TextField="@((item)=>item.MyTextField)"
+                    ValueField="@((item)=>item.MyValueField)"
+                    @bind-SelectedValue="@selectedDate"
+                    Color="Color.Primary">
+        @(searchFilterList?.FirstOrDefault(x=>x.MyValueField == selectedDate)?.MyTextField ?? "")
+    </DropdownList>
+    <Button Class="mr-3" Style="width: 120px;" Color="Color.Primary" Clicked="@OnSelectLatestBtnClicked">查詢</Button>
+    <Button Style="width: 120px;" Color="Color.Primary" Clicked="@OnSelectLatestBtnClicked">查檔線</Button>
+</div>
+<br />
+<Table Hoverable="true">
+    <TableHeader ThemeContrast="ThemeContrast.Dark">
+        <TableRow>
+            <TableHeaderCell>排名</TableHeaderCell>
+            <TableHeaderCell>戰隊名</TableHeaderCell>
+            <TableHeaderCell>人數</TableHeaderCell>
+            <TableHeaderCell>隊長名</TableHeaderCell>
+            <TableHeaderCell>分數</TableHeaderCell>
+            <TableHeaderCell>週目</TableHeaderCell>
+            <TableHeaderCell>Boss</TableHeaderCell>
+            <TableHeaderCell>剩餘血量</TableHeaderCell>
+            <TableHeaderCell>上期</TableHeaderCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableRowCell>1</TableRowCell>
+            <TableRowCell>親親熊寶貝</TableRowCell>
+            <TableRowCell>30</TableRowCell>
+            <TableRowCell>無羽</TableRowCell>
+            <TableRowCell>38059500000</TableRowCell>
+            <TableRowCell>61</TableRowCell>
+            <TableRowCell>5</TableRowCell>
+            <TableRowCell>110000000</TableRowCell>
+            <TableRowCell>1</TableRowCell>
+        </TableRow>
+        <TableRow>
+            <TableRowCell>1</TableRowCell>
+            <TableRowCell>親親熊寶貝</TableRowCell>
+            <TableRowCell>30</TableRowCell>
+            <TableRowCell>無羽</TableRowCell>
+            <TableRowCell>38059500000</TableRowCell>
+            <TableRowCell>61</TableRowCell>
+            <TableRowCell>5</TableRowCell>
+            <TableRowCell>110000000</TableRowCell>
+            <TableRowCell>1</TableRowCell>
+        </TableRow>
+        <TableRow>
+            <TableRowCell>1</TableRowCell>
+            <TableRowCell>親親熊寶貝</TableRowCell>
+            <TableRowCell>30</TableRowCell>
+            <TableRowCell>無羽</TableRowCell>
+            <TableRowCell>38059500000</TableRowCell>
+            <TableRowCell>61</TableRowCell>
+            <TableRowCell>5</TableRowCell>
+            <TableRowCell>110000000</TableRowCell>
+            <TableRowCell>1</TableRowCell>
+        </TableRow>
+        <TableRow>
+            <TableRowCell>1</TableRowCell>
+            <TableRowCell>親親熊寶貝</TableRowCell>
+            <TableRowCell>30</TableRowCell>
+            <TableRowCell>無羽</TableRowCell>
+            <TableRowCell>38059500000</TableRowCell>
+            <TableRowCell>61</TableRowCell>
+            <TableRowCell>5</TableRowCell>
+            <TableRowCell>110000000</TableRowCell>
+            <TableRowCell>1</TableRowCell>
+        </TableRow>
+        <TableRow>
+            <TableRowCell>1</TableRowCell>
+            <TableRowCell>親親熊寶貝</TableRowCell>
+            <TableRowCell>30</TableRowCell>
+            <TableRowCell>無羽</TableRowCell>
+            <TableRowCell>38059500000</TableRowCell>
+            <TableRowCell>61</TableRowCell>
+            <TableRowCell>5</TableRowCell>
+            <TableRowCell>110000000</TableRowCell>
+            <TableRowCell>1</TableRowCell>
+        </TableRow>
+    </TableBody>
+</Table>
+@code
+{
+    private Dropdown dropdown;
+
+    protected override async Task OnInitializedAsync()
+    {
+    }
+
+    public class MySelectModel
+    {
+        public int MyValueField { get; set; }
+        public string MyTextField { get; set; }
+    }
+
+    static string[] Server = { "美食殿堂", "真步真步王國", "破曉之星", "小小甜心" };
+    IEnumerable<MySelectModel> serverList = Enumerable.Range(1, Server.Length).Select(x => new MySelectModel { MyTextField = Server[x - 1], MyValueField = x });
+
+    static string[] Date = { "2021/06/30" };
+    IEnumerable<MySelectModel> dateList = Enumerable.Range(1, Date.Length).Select(x => new MySelectModel { MyTextField = Date[x - 1], MyValueField = x });
+
+    static string[] Time = { "23:00", "23:30" };
+    IEnumerable<MySelectModel> timeList = Enumerable.Range(1, Time.Length).Select(x => new MySelectModel { MyTextField = Time[x - 1], MyValueField = x });
+
+    static string[] SearchFilter = { "戰隊名", "隊長名", "排名" };
+    IEnumerable<MySelectModel> searchFilterList = Enumerable.Range(1, SearchFilter.Length).Select(x => new MySelectModel { MyTextField = SearchFilter[x - 1], MyValueField = x });
+
+
+    int selectedServer { get; set; } = 1;
+
+    int selectedDate { get; set; } = 1;
+
+    int selectedTime { get; set; } = 1;
+
+    void OnSelectLatestBtnClicked()
+    {
+        selectedTime = Time.Length;
+        selectedDate = Date.Length;
+    }
+}
+
