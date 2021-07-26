@@ -13,85 +13,99 @@ namespace WebApplication10.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 2 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 3 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 4 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 5 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 6 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 7 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 8 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 9 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using WebApplication10;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 10 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using WebApplication10.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 11 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Blazorise;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\_Imports.razor"
+#line 12 "C:\Code\BlazorPrincessRedive\WebApplication10\_Imports.razor"
 using Blazorise.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Code\BlazorPrincessRedive\WebApplication10\Pages\Index.razor"
+using Blazorise.DataGrid;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Code\BlazorPrincessRedive\WebApplication10\Pages\Index.razor"
+using System.Net.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Code\BlazorPrincessRedive\WebApplication10\Pages\Index.razor"
+using Newtonsoft.Json;
 
 #line default
 #line hidden
@@ -105,12 +119,33 @@ using Blazorise.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 126 "C:\Users\HARRIS.DAI\source\repos\WebApplication10\WebApplication10\Pages\Index.razor"
+#line 73 "C:\Code\BlazorPrincessRedive\WebApplication10\Pages\Index.razor"
  
-    private Dropdown dropdown;
-
+    private Alert myAlert;
+    private string url = "http://sd016808.asuscomm.com:6812";
+    private List<ClanData> clanDatas = new List<ClanData>();
+    private static readonly HttpClient client = new HttpClient();
     protected override async Task OnInitializedAsync()
     {
+        var myObject = new
+        {
+            server = "1"
+        };
+
+        JsonContent content = JsonContent.Create(myObject);
+
+        var response = await client.PostAsync(url + "/query/datetime", content);
+        string responseString = await response.Content.ReadAsStringAsync();
+        clanTime = JsonConvert.DeserializeObject<ClanTime>(responseString);
+
+        var dates = clanTime.message.Keys.ToList();
+        for (int i = 0; i < dates.Count(); i++)
+        {
+            var date = dates[i];
+            dateList.Add(new MySelectModel() { MyTextField = date, MyValueField = i });
+        }
+
+        selectedDate = dateList.Count - 1;
     }
 
     public class MySelectModel
@@ -119,34 +154,128 @@ using Blazorise.Components;
         public string MyTextField { get; set; }
     }
 
-    static string[] Server = { "美食殿堂", "真步真步王國", "破曉之星", "小小甜心" };
+    static string[] Server = { "美食殿堂" };
     IEnumerable<MySelectModel> serverList = Enumerable.Range(1, Server.Length).Select(x => new MySelectModel { MyTextField = Server[x - 1], MyValueField = x });
 
-    static string[] Date = { "2021/06/30" };
-    IEnumerable<MySelectModel> dateList = Enumerable.Range(1, Date.Length).Select(x => new MySelectModel { MyTextField = Date[x - 1], MyValueField = x });
+    List<MySelectModel> dateList = new List<MySelectModel>();
 
-    static string[] Time = { "23:00", "23:30" };
-    IEnumerable<MySelectModel> timeList = Enumerable.Range(1, Time.Length).Select(x => new MySelectModel { MyTextField = Time[x - 1], MyValueField = x });
+    List<MySelectModel> timeList = new List<MySelectModel>();
 
     static string[] SearchFilter = { "戰隊名", "隊長名", "排名" };
     IEnumerable<MySelectModel> searchFilterList = Enumerable.Range(1, SearchFilter.Length).Select(x => new MySelectModel { MyTextField = SearchFilter[x - 1], MyValueField = x });
 
+    private ClanTime clanTime = new ClanTime();
 
-    int selectedServer { get; set; } = 1;
+    int _selectedServer = 1;
+    int selectedServer
+    {
+        get => _selectedServer;
+        set
+        {
+            _selectedServer = value;
+        }
+    }
 
-    int selectedDate { get; set; } = 1;
+    int _selectDate = 1;
+    int selectedDate
+    {
+        get => _selectDate;
+        set
+        {
+            _selectDate = value;
+            timeList.Clear();
+            var times = clanTime.message[dateList[_selectDate].MyTextField];
+            for (int i = 0; i < times.Count; i++)
+            {
+                var time = times[i];
+                timeList.Add(new MySelectModel() { MyTextField = time, MyValueField = i });
+            }
+
+            selectedTime = timeList.Count - 1;
+        }
+    }
 
     int selectedTime { get; set; } = 1;
 
+    int selectedFilter { get; set; } = 1;
+
     void OnSelectLatestBtnClicked()
     {
-        selectedTime = Time.Length;
-        selectedDate = Date.Length;
+        selectedTime = timeList.Count - 1;
+        selectedDate = dateList.Count - 1;
+    }
+
+    string GetTimeSetting()
+    {
+        return dateList[selectedDate].MyTextField + timeList[selectedTime].MyTextField;
+    }
+
+    async void OnSearchBtnClicked()
+    {
+        var temp = new List<ClanData>();
+        var myObject = new
+        {
+            server = "1",
+            date = GetTimeSetting()
+        };
+
+        JsonContent content = JsonContent.Create(myObject);
+
+        var response = await client.PostAsync(url + "/query/clandata", content);
+        string responseString = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseString);
+
+        var datas = JsonConvert.DeserializeObject<ClanDatas>(responseString);
+        foreach (var data in datas.Message)
+        {
+            temp.Add(new ClanData
+            {
+                Rank = data["Rank"],
+                Clan_Name = data["Clan_Name"],
+                Member = data["Member"],
+                Lead_Name = data["Lead_Name"],
+                Damage = data["Damage"],
+                Lap = data["Lap"],
+                Boss = data["Boss"],
+                Left_Hp = data["Left_Hp"],
+                Grade_Rank = data["Grade_Rank"]
+            });
+        }
+        clanDatas = temp;
+        StateHasChanged();
+    }
+    void OnSearchLineBtnClicked()
+    {
+        myAlert.Show();
+    }
+
+    public class ClanDatas
+    {
+        public List<Dictionary<string, string>> Message = new List<Dictionary<string, string>>();
+    }
+
+    public class ClanData
+    {
+        public string Rank { get; set; }
+        public string Clan_Name { get; set; }
+        public string Member { get; set; }
+        public string Lead_Name { get; set; }
+        public string Damage { get; set; }
+        public string Lap { get; set; }
+        public string Boss { get; set; }
+        public string Left_Hp { get; set; }
+        public string Grade_Rank { get; set; }
+    }
+
+    public class ClanTime
+    {
+        public Dictionary<string, List<string>> message = new Dictionary<string, List<string>>();
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }

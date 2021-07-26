@@ -56,6 +56,26 @@
           "lib/net5.0/Blazorise.Components.dll": {}
         }
       },
+      "Blazorise.DataGrid/0.9.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "0.9.4.1",
+          "Microsoft.AspNetCore.Components": "5.0.0",
+          "Microsoft.AspNetCore.Components.Web": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Blazorise.DataGrid.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Blazorise.DataGrid.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazorise.DataGrid.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.DataGrid.props": {}
+        }
+      },
       "Blazorise.Icons.FontAwesome/0.9.4.1": {
         "type": "package",
         "dependencies": {
@@ -374,6 +394,15 @@
         },
         "runtime": {
           "lib/net5.0/Microsoft.JSInterop.WebAssembly.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "System.IO.Pipelines/5.0.1": {
@@ -450,6 +479,26 @@
           "lib/net5.0/Blazorise.Components.dll": {}
         }
       },
+      "Blazorise.DataGrid/0.9.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "0.9.4.1",
+          "Microsoft.AspNetCore.Components": "5.0.0",
+          "Microsoft.AspNetCore.Components.Web": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Blazorise.DataGrid.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Blazorise.DataGrid.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazorise.DataGrid.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.DataGrid.props": {}
+        }
+      },
       "Blazorise.Icons.FontAwesome/0.9.4.1": {
         "type": "package",
         "dependencies": {
@@ -768,6 +817,15 @@
         },
         "runtime": {
           "lib/net5.0/Microsoft.JSInterop.WebAssembly.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "System.IO.Pipelines/5.0.1": {
@@ -850,6 +908,28 @@
         "lib/net5.0/Blazorise.Components.xml",
         "lib/net6.0/Blazorise.Components.dll",
         "lib/net6.0/Blazorise.Components.xml"
+      ]
+    },
+    "Blazorise.DataGrid/0.9.4.1": {
+      "sha512": "XkU7X/HoGP3P5dahVKRHUhb7T/vvdLCxnosjCxdTBHdbPqNVT0z9WoM6lxRFLxaw8R2sysPv/i79kcCqIMUptg==",
+      "type": "package",
+      "path": "blazorise.datagrid/0.9.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.datagrid.0.9.4.1.nupkg.sha512",
+        "blazorise.datagrid.nuspec",
+        "build/Blazorise.DataGrid.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.DataGrid.props",
+        "buildTransitive/Blazorise.DataGrid.props",
+        "lib/net5.0/Blazorise.DataGrid.dll",
+        "lib/net5.0/Blazorise.DataGrid.xml",
+        "lib/net6.0/Blazorise.DataGrid.dll",
+        "lib/net6.0/Blazorise.DataGrid.xml",
+        "staticwebassets/blazorise.datagrid.js"
       ]
     },
     "Blazorise.Icons.FontAwesome/0.9.4.1": {
@@ -1362,6 +1442,33 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "System.IO.Pipelines/5.0.1": {
       "sha512": "qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
       "type": "package",
@@ -1415,46 +1522,35 @@
     "net5.0": [
       "Blazorise.Bootstrap >= 0.9.4.1",
       "Blazorise.Components >= 0.9.4.1",
+      "Blazorise.DataGrid >= 0.9.4.1",
       "Blazorise.Icons.FontAwesome >= 0.9.4.1",
       "Microsoft.AspNetCore.Components.WebAssembly >= 5.0.5",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.5",
+      "Newtonsoft.Json >= 13.0.1",
       "System.Net.Http.Json >= 5.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HARRIS.DAI\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\WebApplication10.csproj",
+      "projectUniqueName": "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\WebApplication10.csproj",
       "projectName": "WebApplication10",
-      "projectPath": "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\WebApplication10.csproj",
-      "packagesPath": "C:\\Users\\HARRIS.DAI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\obj\\",
+      "projectPath": "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\WebApplication10.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\HARRIS.DAI\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://twtpeoswscap01/repository/nuget-hosted-OneSoftware/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1481,6 +1577,10 @@
             "target": "Package",
             "version": "[0.9.4.1, )"
           },
+          "Blazorise.DataGrid": {
+            "target": "Package",
+            "version": "[0.9.4.1, )"
+          },
           "Blazorise.Icons.FontAwesome": {
             "target": "Package",
             "version": "[0.9.4.1, )"
@@ -1493,6 +1593,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.5, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
           },
           "System.Net.Http.Json": {
             "target": "Package",
@@ -1512,7 +1616,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.3, 5.0.3]"
           }
         ],
         "frameworkReferences": {
@@ -1520,7 +1624,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

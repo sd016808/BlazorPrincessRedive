@@ -1,37 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\WebApplication10.csproj": {}
+    "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\WebApplication10.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\WebApplication10.csproj": {
+    "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\WebApplication10.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\WebApplication10.csproj",
+        "projectUniqueName": "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\WebApplication10.csproj",
         "projectName": "WebApplication10",
-        "projectPath": "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\WebApplication10.csproj",
-        "packagesPath": "C:\\Users\\HARRIS.DAI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HARRIS.DAI\\source\\repos\\WebApplication10\\WebApplication10\\obj\\",
+        "projectPath": "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\WebApplication10.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\BlazorPrincessRedive\\WebApplication10\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\HARRIS.DAI\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://twtpeoswscap01/repository/nuget-hosted-OneSoftware/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,6 +48,10 @@
               "target": "Package",
               "version": "[0.9.4.1, )"
             },
+            "Blazorise.DataGrid": {
+              "target": "Package",
+              "version": "[0.9.4.1, )"
+            },
             "Blazorise.Icons.FontAwesome": {
               "target": "Package",
               "version": "[0.9.4.1, )"
@@ -70,6 +64,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "System.Net.Http.Json": {
               "target": "Package",
@@ -89,7 +87,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-              "version": "[5.0.5, 5.0.5]"
+              "version": "[5.0.3, 5.0.3]"
             }
           ],
           "frameworkReferences": {
@@ -97,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

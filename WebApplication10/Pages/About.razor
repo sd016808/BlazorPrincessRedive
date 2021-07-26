@@ -1,55 +1,32 @@
 ﻿@page "/about"
 @inject HttpClient Http
 
-<h1>Weather forecast</h1>
+<h1>三三鎮招生啦～</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p style="font-family:courier;white-space: pre;">
+    ✿✿✿　美食『三三鎮』　✿✿✿
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+    創立一年半，前期隊員多為百名外玩家，自成生態圈的邊緣戰隊 \\0w0/
 
-@code {
-    private WeatherForecast[] forecasts;
+    宗旨是『營造舒適的環境，享受練軸打刀的樂趣，追求個人與公會的共利』
 
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
-    }
+    【環境】
 
-    public class WeatherForecast
-    {
-        public DateTime Date { get; set; }
+    ■　無排刀 無排套餐 自選三刀 高出低尾 （by 拉麵怪
+    ■　不強求新黑&科技刀 盡力而為
+    ■　無硬性傷害標準 對得起自己跟隊友就好
+    ■　討論熱烈、重自主協調、跟隊友密切合作的環境
+    ■　不怕犯錯，更重要的是態度與思考改進
+    ■　幹部只是輔助 小精靈要好好愛護
+    ■　自己的刀自己玩，有困難可求助
+    ■　清晨、中午，下午跟凌晨都有車可跟
 
-        public int TemperatureC { get; set; }
+    【需求】
 
-        public string Summary { get; set; }
+    ■　對會戰有熱情，喜歡練刀的挑戰性與成就感
+    ■　Auto可當輔助，科技不強求
+    ■　一般前50該有的練度與BOX
+    ■　缺角或無前排經驗者若有實績能證明，可能也有機會～
 
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
-}
+    面談會詳盡說明戰隊運作相關，希望成員是真的喜歡這裡 & 彼此適合才進來～長居久安，玩得開心～
+</p>
