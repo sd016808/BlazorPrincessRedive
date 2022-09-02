@@ -45,7 +45,7 @@
 <br />
 <br />
 <div class="d-flex flex-row">
-    <TextEdit Class="mr-3" Placeholder="查詢內容 (留白為不加限制)"></TextEdit>
+    <TextEdit Class="mr-3" Placeholder="查詢內容 (留白為不加限制)" Text="@FilterText" TextChanged="@OnNameChanged"></TextEdit>
     <DropdownList Class="mr-3" TItem="MySelectModel" TValue="int"
                   Data="@searchFilterList"
                   TextField="@((item)=>item.MyTextField)"
@@ -72,8 +72,9 @@
 @code
 {
     private Alert myAlert;
-    private string url = "http://sd016808.asuscomm.com:6812";
+    private string url = "http://pcrguild.autopecker.com";
     private List<ClanData> clanDatas = new List<ClanData>();
+    private List<ClanData> tmp_clanDatas = new List<ClanData>();
     private static readonly HttpClient client = new HttpClient();
     protected override async Task OnInitializedAsync()
     {
@@ -116,6 +117,7 @@
 
     private ClanTime clanTime = new ClanTime();
 
+    private string FilterText;
     int _selectedServer = 1;
     int selectedServer
     {
@@ -191,9 +193,34 @@
                 Grade_Rank = data["Grade_Rank"]
             });
         }
-        clanDatas = temp;
-        StateHasChanged();
+        tmp_clanDatas = temp.ToList();
+        clanDatas = temp.ToList();
+        if (!string.IsNullOrWhiteSpace(FilterText))
+            await OnNameChanged(FilterText);
+        else
+            StateHasChanged();
     }
+
+    Task OnNameChanged(string value)
+    {
+        switch (selectedFilter)
+        {
+            case 1:
+                clanDatas = tmp_clanDatas.Where(x => x.Clan_Name.Contains(value)).ToList();
+                break;
+            case 2:
+                clanDatas = tmp_clanDatas.Where(x => x.Lead_Name.Contains(value)).ToList();
+                break;
+            case 3:
+                clanDatas = tmp_clanDatas.Where(x => x.Rank == value).ToList();
+                break;
+        }
+
+        FilterText = value;
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
     void OnSearchLineBtnClicked()
     {
         myAlert.Show();
